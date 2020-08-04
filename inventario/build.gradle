@@ -1,6 +1,19 @@
 plugins {
     id 'java'
+//    apply plugin: "org.springframework.boot"
 }
+//bootJar {
+//    mainClassName = 'com.ec.qsoft.inventario.InventarioApplication'
+//    classifier = 'boot'
+//}
+//bootJar {
+//    enabled = false
+//}
+
+jar {
+    enabled = true
+}
+
 description = 'inventario'
 dependencies {
 
