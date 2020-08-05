@@ -3,11 +3,13 @@ package com.ec.qsoft.inventario.controller;
 import com.ec.qsoft.inventario.entidad.ArticuloEntity;
 import com.ec.qsoft.inventario.factoria.InventarioFactory;
 import com.ec.qsoft.inventario.pojo.ItemPojo;
-import lombok.extern.log4j.Log4j2;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/inventario")

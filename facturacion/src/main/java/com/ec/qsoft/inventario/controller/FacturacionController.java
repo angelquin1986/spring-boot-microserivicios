@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 
 @RestController
-@RequestMapping("/inventario")
+@RequestMapping("/factura")
 @Slf4j
 public class FacturacionController {
-    @PostMapping("/guardar-Factura")
+    @PostMapping("/guardar-factura")
     public ResponseEntity<Object> guardarFactura(@RequestBody FacturaPojo facturaPojo) throws Exception {
         CabeceraFacturaEntity cabeceraFactura = new CabeceraFacturaEntity();
         cabeceraFactura.setIdCliente(facturaPojo.getId());

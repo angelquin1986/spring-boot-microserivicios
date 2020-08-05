@@ -1,10 +1,11 @@
 package com.ec.qsoft.inventario.gestor;
 
 import com.ec.qsoft.inventario.entidad.CabeceraFacturaEntity;
+import com.ec.qsoft.inventario.feing.cliente.InventarioClienteProxy;
+import com.ec.qsoft.inventario.pojo.ItemPojoInventario;
 import com.ec.qsoft.inventario.repositorio.CabeceraFacturaRepository;
 import com.ec.qsoft.inventario.repositorio.DetalleFacturaRepository;
 import lombok.Data;
-import lombok.extern.log4j.Log4j2;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -24,6 +25,9 @@ public class FacturaGestor {
     @Autowired
     private DetalleFacturaRepository detalleFacturaRepository;
 
+    @Autowired
+    private InventarioClienteProxy inventarioClienteProxy;
+
     /**
      * crear una factura
      *
@@ -33,7 +37,10 @@ public class FacturaGestor {
         //buscar el cliente para la factura
         String nombreCliente = this.buscarCliente(cabeceraFactura.getIdCliente());
         log.info("Cliente Facturacion Encontrado:" + nombreCliente);
-
+        ItemPojoInventario itemPojoInventario = new ItemPojoInventario();
+        itemPojoInventario.setOrderId(1);
+        itemPojoInventario = inventarioClienteProxy.getItiemStock(itemPojoInventario);
+        log.info("integracion con inventario:" + itemPojoInventario.getNombre());
         return cabeceraFactura;
     }
 
