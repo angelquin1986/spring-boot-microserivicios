@@ -1,5 +1,8 @@
 rootProject.name = 'spring-boot-microservicios'
 include 'inventario'
+include 'facturacion'
+include 'eureka-server'
+include 'commons-util'
 
 
 

@@ -1,12 +1,12 @@
 plugins {
     id 'java'
 }
-description = 'inventario'
-//dependencyManagement {
-//    imports {
-//        mavenBom("org.springframework.boot:spring-boot-dependencies:2.3.2.RELEASE")
-//    }
-//}
+
+jar {
+    enabled = true
+}
+
+description = 'facturacion'
 dependencies {
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
     implementation project(':commons-util')

@@ -24,12 +24,12 @@ public class InventarioGestor {
      *
      * @return
      */
-    public ArticuloEntity obtenerItem(Integer orderId) {
+    public ArticuloEntity obtenerItemStock(Integer orderId) {
         ArticuloEntity articuloEntity = new ArticuloEntity();
         articuloEntity.setId(orderId);
         articuloEntity.setNombre("Chocolate Galak");
         if (this.validarStock(orderId)) {
-            articuloEntity.setCantidad(new BigDecimal(2));
+            articuloEntity.setCantidad(new BigDecimal(500));
 
         } else {
             articuloEntity.setCantidad(new BigDecimal(0));
