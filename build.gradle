@@ -70,7 +70,7 @@ subprojects {
 
 }
 
-configure(subprojects - project(':eureka-server')) {
+configure(subprojects - project(':eureka-server') - project(':zuul-server')) {
     dependencies {
 
         implementation 'org.springframework.boot:spring-boot'
